@@ -1,0 +1,76 @@
+from dispositivoIoT import DispositivoIoT
+from lampoIoT import LampoIot
+from termosIoT import TermosIoT
+from speakerIoT import SpeakerIot
+
+class Hub(DispositivoIoT):
+    def __init__(self,nome,listaDispositivi):
+        super().__init__(nome)
+        self.ListaDispositivi=[]
+
+        for d in listaDispositivi:
+            self.aggiungiDispositivo(d)
+
+    def __repr__(self):
+        return f"hub: {super().__repr__()}, lista dispositivi: {self.ListaDispositivi}"
+
+    def aggiungiDispositivo(self,nuovoDisp):
+        if(isinstance(nuovoDisp,DispositivoIoT)):
+            self.ListaDispositivi.append(nuovoDisp)
+
+h= Hub("buddy",[])
+
+lam1= LampoIot("lampione")
+lam2= LampoIot("Lampino")
+
+speaker1= SpeakerIot("cassa centrale")
+
+speaker1.impostaValore({'canzone':"gigi di alesio",'volume':69})
+h.aggiungiDispositivo(lam1)
+h.aggiungiDispositivo(lam2)
+h.aggiungiDispositivo(speaker1)
+h.aggiungiDispositivo("gigino")
+
+print(h)
+
+
+.upper()#.upper() mi mette tutti i caratteri in maiuscolo
+random.randint(1000,9999)# da un numero intero a caso compreso tra i due messi tra parentesi
+.append("QUALCOSA") #aggiunge in fondo alla lista
+
+
+print(ListaGS)	#STAMPA TUTTO
+print(ListaGS[0])	#STAMPA IL PRIMO
+print(ListaGS[-1]) #stampa l'ultimo
+print(ListaGS[2:4]) #stampa dall'elemento 2 al 4 escusi
+
+
+#DIZIONARI - mappe
+#in ogni posizione ci sono due elementi la chiave ed il valore
+dictGG = {
+    'primo':'lun',
+    'secondo':'marte',
+    'terzo':'merco',
+    'quarto':'giova',
+    'quinto':'vener'
+}
+print(dictGG)
+print(dictGG['terzo'])#accede la posizione della chiave dove si trova
+
+
+round(numero,quanti decimali vuoi)
+
+
+if():
+	fa quello che sta qua
+elif():
+	fa quello che sta qua
+else:
+	fa quello che sta qua
+
+while 1==1:
+	fa quello che sta qua
+
+for a in range(5): o for a in [numeri,che,voglio,a,caso]:
+
+
